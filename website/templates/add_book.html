@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" class="m-4">
+    <h3 class="text-center mt-5">Add book</h3>
+    <div class="row mb-4 mt-5">
+        <div class="col">
+            <div class="form-outline">
+                <input type="text" id="title" class="form-control" name="title" />
+                <label class="form-label" for="title">Book Title</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-outline">
+                <input type="text" id="author" class="form-control" name="author" />
+                <label class="form-label" for="author">Author</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="text" id="publisher" class="form-control" name="publisher" />
+        <label class="form-label" for="publisher">Publisher</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="text" id="edition" class="form-control" name="edition" />
+        <label class="form-label" for="edition">Edition</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="text" id="library_name" class="form-control" name="library_name" />
+        <label class="form-label" for="library_name">Library Name</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="text" id="genre" class="form-control" name="genre" />
+        <label class="form-label" for="genre">Genre</label>
+    </div>
+
+    <div class="input-group mb-4 ">
+        <div class="input-group mt-3">
+            <label class="input-group-text bg-success text-white" for="file">Add File</label>
+            <input type="file" accept="application/pdf, .epub, .mobi" class="form-control bg-dark-subtle" id="file"
+                name="pdf">
+        </div>
+    </div>
+    <div class="input-group mb-4 ">
+        <div class="input-group mt-3">
+            <label class="input-group-text bg-success text-white" for="image">Add Image</label>
+            <input type="file" accept="image/png, image/gif, image/jpeg" class="form-control bg-dark-subtle" id="image"
+                name="image">
+        </div>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary btn-block mb-4">Add</button>
+</form>
+{% endblock %}

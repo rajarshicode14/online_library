@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+User Home
+{% endblock %}
+
+{% block style %}
+<style>
+	/* unvisited link grey */
+	#top-menu a:link {
+		color: black;
+	}
+
+	/* visited link grey */
+	#top-menu a:visited {
+		color: white;
+	}
+
+	/* mouse over link blue */
+	#top-menu a:hover {
+		color: wheat;
+	}
+
+	/* selected link blue */
+	#top-menu a:active {
+		color: white;
+	}
+
+	/* !IMPORTANT ONLY ADD THIS CLASS TO YOUR ACTIVE PAGE LINK ( Color Blue )*/
+	.activePage a {
+		color: white !important
+	}
+</style>
+
+
+{% endblock %}
+
+{% block content %}
+<div class=" mx-4 d-flex justify-content-evenly bg-success-subtle py-4 border border-5 border-warning rounded-6 mb-6"
+	id="top-menu">
+	<a class="btn btn-primary btn-rounded mx-1" type="button" href="{{ url_for('views.all_books') }}">All Available
+		Books</a>
+	<a class="btn btn-warning btn-rounded mx-1" type="button" href="{{ url_for('views.currently_reading') }}">Currently
+		Reading</a>
+	<a class="btn btn-success btn-rounded mx-1" type="button" href="{{ url_for('views.finished_reading') }}">Finished
+		Reading</a>
+</div>
+
+{% block user_content %}
+{% endblock %}
+
+
+{% endblock %}

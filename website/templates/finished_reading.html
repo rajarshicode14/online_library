@@ -1,0 +1,31 @@
+{% extends "user_home.html" %}
+
+{% block title%}
+Finished Reading
+{% endblock %}
+
+{% block user_content %}
+<!-- <h1>Hello finished reading books</h1> -->
+<div class="container">
+    <h2 class="my-2 text-center text-danger">Finished Reading</h2>
+    <div class="row gy-3 my-3 ">
+        {% for book in books %}
+        <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="card mb-3 mr-3">
+                <img src="static/data/img/{{ book.id }}.jpg" style="height: 120px;" class="ratio ratio-1x1 card-img-top"
+                    alt="Book Image" />
+                <div class="card-body">
+                    <h5 class="card-title text-truncate">{{ book.title }}</h5>
+
+                    <p class="card-title mb-4 text-truncate"><code>Author:</code>{{ book.author }}</p>
+                    <form method="post">
+                        <input class="d-none" name="book_id" value="{{ book.id }}" />
+                        <button class="btn btn-primary" type="submit">Mark Unread</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
